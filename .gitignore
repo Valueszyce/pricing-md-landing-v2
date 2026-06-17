@@ -1,0 +1,13 @@
+# Local tooling / preview config
+.claude/
+
+# Source & internal materials — NOT part of the landing-page deliverable
+how-to-sell-pricing-md.md
+pricing-md-proposal.md
+pricing-md-offer-deck.pdf
+newsletter-craft-rules.md
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.log
