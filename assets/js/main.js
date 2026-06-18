@@ -32,12 +32,13 @@
      `height` property and sizes the iframe to match. Matches the standard
      Valueships artifact convention. Debounced via requestAnimationFrame. */
   function measureHeight() {
-    return Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.offsetHeight
-    );
+    // Measure the actual content wrapper, NOT documentElement.scrollHeight:
+    // documentElement is always at least the iframe viewport height, so reading
+    // it back creates a feedback loop and leaves trailing whitespace once the
+    // iframe has been sized. Measure <main>'s real bottom instead.
+    var el = document.querySelector("main") || document.body;
+    var rect = el.getBoundingClientRect();
+    return Math.ceil(rect.bottom + (window.scrollY || window.pageYOffset || 0));
   }
 
   function postHeight() {
