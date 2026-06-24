@@ -110,6 +110,10 @@ img, svg { max-width: 100%; display: block; }
 .btn--outline { background: transparent; border-color: var(--line-2); color: var(--ink); }
 .btn--outline:hover { background: var(--ink); color: #fff; }
 .btn--lg { padding: 17px 26px; font-size: 0.86rem; }
+/* Two-line CTA: small "see how it works" label above the main action */
+.btn--stack { flex-direction: column; gap: 6px; padding: 15px 32px; line-height: 1.1; }
+.btn--stack .btn__top { font-size: 0.72rem; letter-spacing: 0.1em; opacity: 0.6; }
+.btn--stack .btn__main { display: inline-flex; align-items: center; gap: 10px; font-size: 0.95rem; }
 
 /* =========================================================================
    HERO
